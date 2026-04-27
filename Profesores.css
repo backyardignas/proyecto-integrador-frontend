@@ -1,0 +1,54 @@
+.header-principal {
+            background-color: var(--blanco-puro);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 10px 0;
+        }
+
+        .navegador-custom {
+            padding: 0.5rem 1rem;
+        }
+
+        .logo-nav {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-nav:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: var(--lila-oscuro) !important;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--lila-fondo) !important;
+        }
+
+        /* Buscador Estilo Píldora */
+        .buscador-custom {
+            border-radius: 25px;
+            border: 1px solid #dee2e6;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+
+        .btn-buscar {
+            border-radius: 25px;
+            padding: 8px 25px;
+            background-color: var(--lila-oscuro);
+            border: none;
+            color: white;
+            transition: opacity 0.3s;
+        }
+
+        .btn-buscar:hover {
+            opacity: 0.9;
+            background-color: var(--lila-fondo);
+            color: var(--lila-oscuro);
+
+        }

@@ -1,0 +1,111 @@
+body {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); /* Azul marino a azul noche */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .loguin {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+            border-top: 5px solid #3b82f6; /* Detalle superior en azul claro */
+            /* Asegurar centrado del contenido interno */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loguin:hover {
+            transform: translateY(-8px);
+        }
+
+        form {
+            width: 100%;
+        }
+
+        h1 {
+            color: #1e3a8a; /* Azul institucional */
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .usuario, .contraseña {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #475569;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+            color: #1e293b;
+            box-sizing: border-box; /* Importante para que el padding no desborde */
+        }
+
+        input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+        }
+
+        .button button {
+            width: 100%;
+            padding: 14px;
+            background-color: #2563eb; /* Azul brillante */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .button button:hover {
+            background-color: #1d4ed8;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            transform: scale(1.02);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        .icon-header {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 5px;
+            color: #3b82f6;
+            
