@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes - Profesores</title>
+    <link rel="stylesheet" href="CSS/profesores.css">
+</head>
+<body>
+
+    <header class="header-principal">
+        <nav class="navegador-custom">
+            <div class="logo-nav">
+                <img src="img/Logo.png" alt="Logo" style="width: 70%;" onerror="this.src='https://via.placeholder.com/40'">
+            </div>
+            <div class="nav-links">
+                <a href="Main.html" class="nav-link">Inicio</a>
+                <a href="login.html" class="nav-link">Estudiantes</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Gestión de Estudiantes</h2>
+        
+        <form id="student-form">
+            <input type="hidden" id="student-id">
+            <input type="text" id="nombre" placeholder="Nombre Completo" required>
+            <input type="text" id="programa" placeholder="Programa Académico" required>
+            <button type="submit" class="btn-guardar">Guardar Estudiante</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Programa</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="student-list">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="JS/profesores.js"></script>
+</body>
+</html>
+/*hola*/

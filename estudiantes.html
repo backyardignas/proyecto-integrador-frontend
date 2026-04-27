@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes - UniOriente</title>
+    <link rel="stylesheet" href="CSS/estudiantes.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <div class="logo-circular">
+                <img src="IMG/logo.png" alt="Logo">
+            </div>
+            <h1>Uni<span>Oriente</span></h1>
+        </div>
+        <div class="user-info">
+            <span id="saludo-usuario">Cargando...</span>
+            <a href="Main.html" class="btn-back">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Registrar Nuevo Estudiante</h2>
+            <form id="registro-form">
+                <input type="hidden" id="edit-index">
+                <div class="input-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="nombre" placeholder="Ej: Alex Monroy" required>
+                </div>
+                <div class="input-group">
+                    <label>Rol / Carrera</label>
+                    <select id="rol" required>
+                        <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+                        <option value="Derecho">Derecho</option>
+                        <option value="Administración">Administración</option>
+                        <option value="Diseño Gráfico">Diseño Gráfico</option>
+                    </select>
+                </div>
+                <button type="submit" id="btn-guardar">Guardar Registro</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>Estudiantes Registrados</h2>
+            <div id="lista-estudiantes" class="grid-estudiantes">
+                </div>
+        </section>
+    </main>
+
+    <script src="JS/estudiantes.js"></script>
+</body>
+</html>
+/*hola*/

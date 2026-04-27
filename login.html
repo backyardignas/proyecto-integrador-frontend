@@ -8,33 +8,35 @@
 </head>
 <body>
     
-<div class="login-container">
-    <form class="login-box">
-        <div class="logo-circular">
-            <img src="IMG/Logo.png" alt="Logo Universidad">
-        </div>
+    <div class="login-container">
+        <form class="login-box" onsubmit="event.preventDefault(); login();">
+            <div class="logo-circular">
+                <img src="IMG/Logo.png" alt="Logo Universidad">
+            </div>
 
-        <h1 class="logo-text">Uni<span>Oriente</span></h1>
-        <h2>Portal Académico</h2>
-        
-        <div class="input-group">
-            <label for="usuario">Usuario</label>
-            <input type="text" placeholder="Ingresa tu usuario" id="usuario" required>
-        </div>
+            <h1 class="logo-text">Universidad <span>de Oriente</span></h1>
+            <h2>Portal Académico</h2>
+            
+            <div class="input-group">
+                <label for="usuario">Usuario</label>
+                <input type="text" placeholder="Ingresa tu usuario" id="usuario" required>
+            </div>
 
-        <div class="input-group">
-            <label for="contraseña">Contraseña</label>
-            <input type="password" placeholder="Ingresa tu contraseña" id="contraseña" required>
-        </div>
+            <div class="input-group">
+                <label for="contraseña">Contraseña</label>
+                <input type="password" placeholder="Ingresa tu contraseña" id="contraseña" required>
+            </div>
 
-        <button type="button" class="btn-login" onclick="login()">Iniciar Sesión</button>
-        
-        <div class="footer-links">
-            <a href="#">¿Olvidaste tu contraseña?</a>
-        </div>
-    </form>
-</div>
+            <button type="button" class="btn-login" onclick="login()">Iniciar Sesión</button>
+            
+            <div class="footer-links">
+                <a href="Main.html" style="display: block; margin-bottom: 10px; color: #666; font-size: 0.8rem;">← Volver al Inicio</a>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+        </form>
+    </div>
     
     <script src="JS/login.js"></script>
 </body>
 </html>
+/*hola*/
