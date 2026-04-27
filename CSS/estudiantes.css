@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004694;
+    color: white;
+    padding: 0.7rem 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-circular {
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.logo-circular img {
+    max-width: 75%;
+    max-height: 75%;
+    object-fit: contain;
+}
+
+.navbar h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.navbar h1 span {
+    font-weight: 300;
+    color: #00d4ff;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#saludo-usuario {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-back {
+    background-color: transparent;
+    color: #00d4ff;
+    border: 2px solid #00d4ff;
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-back:hover {
+    background-color: #00d4ff;
+    color: #002d5e;
+}
+
+.container {
+    padding: 40px 8%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.form-section, .list-section {
+    background: white;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-top: 4px solid #004694;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #004694;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #00d4ff;
+}
+
+#btn-guardar {
+    width: 100%;
+    padding: 14px;
+    background-color: #00d4ff;
+    color: #002d5e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+#btn-guardar:hover {
+    background-color: #004694;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.grid-estudiantes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card-estudiante {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-left: 4px solid #004694;
+}
+
+.card-estudiante:hover {
+    transform: translateY(-5px);
+    border-left-color: #00d4ff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-estudiante h4 {
+    color: #004694;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.card-estudiante p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+}
+
+.btn-edit { background: #28a745; }
+.btn-delete { background: #dc3545; }
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #001a35;
+    color: white;
+    font-size: 0.85rem;
+    margin-top: 40px;
+}
+/*hola*/

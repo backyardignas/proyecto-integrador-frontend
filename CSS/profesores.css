@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --azul-primario: #004694;
+    --celeste-acento: #00d4ff;
+    --blanco-puro: #ffffff;
+    --gris-fondo: #f0f2f5;
+    --azul-oscuro: #001a35;
+    --texto-oscuro: #1a1a1a;
+    --rojo-error: #dc3545;
+    --amarillo-edit: #ffc107;
+}
+
+body {
+    background-color: var(--gris-fondo);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* Header y Navegación */
+.header-principal {
+    background-color: var(--azul-primario);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navegador-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 8%;
+}
+
+.logo-nav {
+    width: 50px;
+    height: 50px;
+    background-color: var(--blanco-puro);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--celeste-acento);
+    transition: transform 0.3s ease;
+}
+
+.logo-nav:hover {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    color: var(--blanco-puro) !important;
+    font-weight: 600;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--celeste-acento) !important;
+}
+
+/* Contenedor y Formulario */
+.container {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    color: var(--azul-primario);
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#student-form {
+    background: var(--blanco-puro);
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--azul-primario);
+    margin-bottom: 40px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--celeste-acento);
+}
+
+.btn-guardar {
+    background-color: var(--celeste-acento);
+    color: var(--azul-primario);
+    font-weight: 600;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-guardar:hover {
+    background-color: var(--azul-primario);
+    color: var(--blanco-puro);
+    transform: translateY(-2px);
+}
+
+/* Tabla de Estudiantes */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--blanco-puro);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+th {
+    background-color: var(--azul-primario);
+    color: var(--blanco-puro);
+    padding: 15px;
+    text-align: left;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+/* Botones de Acción */
+.btn-edit {
+    background-color: var(--amarillo-edit);
+    color: var(--texto-oscuro);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: opacity 0.3s;
+}
+
+.btn-delete {
+    background-color: var(--rojo-error);
+    color: var(--blanco-puro);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.8;
+}
+/*hola*/
