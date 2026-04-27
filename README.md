@@ -33,12 +33,20 @@ Proyecto-integrador-frontend-definitivo/
 
 ## Usuarios Predefinidos
 
-| Usuario | Rol | Acceso |
+### Estudiantes
+| Usuario | Contraseña | Acceso |
 | :--- | :--- | :--- |
-| Juliana | Estudiante | Permitido |
-| Monroy | Profesor | Permitido |
-| Santiago | Estudiante | Permitido |
-| Jose | Estudiante | Permitido |
+| Juliana | 123456 | Permitido |
+| Monroy | 123456 | Permitido |
+| Santiago | 123456 | Permitido |
+| Jose | 123456 | Permitido |
+
+### Profesores
+| Usuario | Contraseña | Acceso |
+| :--- | :--- | :--- |
+| Diego | cesde2026 | Permitido |
+| Andres | cesde2026 | Permitido |
+| Luis | cesde2026 | Permitido |
 
 ## Instrucciones de Uso
 
