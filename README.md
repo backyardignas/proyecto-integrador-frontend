@@ -1,28 +1,27 @@
-# Proyecto-integrador-frontend
+# Proyecto-integrador-frontend (Versión 2.0)
 Grupo conformado por Juliana Marulanda, Santiago Arango, Alex Monroy, Jose Vasquez.
 
 ## Descripción del Proyecto
 
 Este es un proyecto integrador frontend que implementa un sistema avanzado de gestión de usuarios con distinción de roles. La aplicación permite el registro de nuevos usuarios y cuenta con un sistema de autenticación diferenciado para **Estudiantes** y **Profesores**, incluyendo medidas de seguridad contra ataques de fuerza bruta mediante el bloqueo temporal de la interfaz tras múltiples intentos fallidos.
 
-## Equipo de Desarrollo
+## Equipo de Desarrollo y Responsabilidades
 
 El proyecto fue desarrollado por:
 
-- **Juliana Marulanda** - Desarrollo de la interfaz de usuario y diseño de estilos CSS.
-- **Alex Monroy** - Arquitectura de la estructura del proyecto y lógica de funciones JavaScript.
-- **Santiago Arango** - Resolución de problemas técnicos, verificación y corrección de errores.
-- **Jose Vasquez** - Diseño del **Mockup en Figma** y prototipado de la experiencia de usuario.
+- **Juliana Marulanda** - Encargada del diseño CSS y estilos visuales de toda la aplicación.
+- **Santiago Arango** - Encargado de la solución de problemas técnicos, verificación y corrección de errores.
+- **Alex Monroy** - Encargado de la arquitectura de la estructura del proyecto y creación de las estructuras HTML.
+- **Jose Vasquez** - Encargado del diseño del **Mockup en Figma** y prototipado de la experiencia de usuario.
 
 ## Estructura del Proyecto
 
 Proyecto-integrador-frontend-definitivo/
-├── index.html          # Página de bienvenida (En desarrollo estético)
+├── Main.html           # Página principal
 ├── login.html          # Interfaz de acceso única (Estudiantes/Profesores)
 ├── registro.html       # Interfaz para el alta de nuevos usuarios
 ├── login.css           # Estilos globales y de componentes de acceso
 ├── loguin.js           # Lógica de seguridad, bloqueo y gestión de roles
-├── Main.html           # Dashboard principal post-login
 └── README.md           # Documentación del proyecto
 
 ## Características Actuales
