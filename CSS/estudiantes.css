@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --azul-primario: #004694;
+    --azul-oscuro: #001a35;
+    --celeste-acento: #00d4ff;
+    --blanco-puro: #ffffff;
+    --gris-fondo: #f0f2f5;
+    --texto-oscuro: #1a1a1a;
+    --texto-mutado: #666666;
+    --verde-exito: #28a745;
+    --rojo-error: #dc3545;
+}
+
+/* --- REGLAS GENERALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--gris-fondo);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER / NAVBAR PREMIUM (CON CRISTAL DIFUMINADO) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 70, 148, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--blanco-puro);
+    padding: 0.8rem 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid rgba(0, 212, 255, 0.25);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--blanco-puro);
+}
+
+.logo-circular {
+    width: 52px;
+    height: 52px;
+    background-color: var(--blanco-puro);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--celeste-acento);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    margin-right: 15px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-circular img {
+    max-width: 75%;
+    max-height: 75%;
+    object-fit: contain;
+}
+
+.logo-container:hover .logo-circular {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 25px var(--celeste-acento);
+}
+
+.navbar h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.navbar h1 span {
+    font-weight: 300;
+    color: var(--celeste-acento);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#saludo-usuario {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Botón Cerrar Sesión */
+.btn-back {
+    background-color: transparent;
+    color: var(--celeste-acento);
+    border: 2px solid var(--celeste-acento);
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-back:hover {
+    background-color: var(--celeste-acento);
+    color: var(--azul-oscuro);
+    box-shadow: 0 0 15px var(--celeste-acento);
+    transform: translateY(-2px);
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    flex-grow: 1;
+}
+
+/* Secciones Formulario y Lista */
+.form-section, .list-section {
+    background: var(--blanco-puro);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 70, 148, 0.05);
+    transition: all 0.3s ease;
+}
+
+.form-section {
+    border-top: 5px solid var(--azul-primario);
+    height: fit-content;
+}
+
+.list-section {
+    border-top: 5px solid var(--celeste-acento);
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: var(--azul-oscuro);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--gris-fondo);
+    padding-bottom: 12px;
+}
+
+/* Formulario e Inputs */
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+    color: var(--texto-oscuro);
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(0, 70, 148, 0.15);
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.9rem;
+    background-color: var(--blanco-puro);
+    color: var(--texto-oscuro);
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--celeste-acento);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+/* Botón Guardar / Acción */
+#btn-guardar {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--celeste-acento), #00bcd4);
+    color: var(--azul-oscuro);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 214, 255, 0.2);
+}
+
+#btn-guardar:hover {
+    background: var(--azul-primario);
+    color: var(--blanco-puro);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 70, 148, 0.25);
+}
+
+/* --- LISTADO Y TARJETAS DE ESTUDIANTES --- */
+.grid-estudiantes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card-estudiante {
+    background: #fdfdfd;
+    border: 1px solid rgba(0, 70, 148, 0.05);
+    padding: 24px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-left: 4px solid var(--azul-primario);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-estudiante:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--celeste-acento);
+    box-shadow: 0 10px 20px rgba(0, 70, 148, 0.08);
+    background-color: var(--blanco-puro);
+}
+
+.card-estudiante h4 {
+    color: var(--azul-oscuro);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    word-wrap: break-word;
+}
+
+.card-estudiante p {
+    font-size: 0.82rem;
+    color: var(--texto-mutado);
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+/* Acciones de Tarjeta */
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.btn-edit, .btn-delete {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--blanco-puro);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-edit {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--verde-exito);
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.btn-edit:hover {
+    background-color: var(--verde-exito);
+    color: var(--blanco-puro);
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--rojo-error);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.btn-delete:hover {
+    background-color: var(--rojo-error);
+    color: var(--blanco-puro);
+    transform: translateY(-1px);
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr; /* Apilar formulario y lista en móviles */
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    .navbar {
+        padding: 0.8rem 4%;
+    }
+    
+    .navbar h1 {
+        font-size: 1.15rem;
+    }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Facultades.css">
+    <link rel="icon" type="image/png" href="img/heart.png">
+</head>
+<body>
+    
+
+<header class="header-principal w-100">
+    <nav class="navbar navbar-expand-lg navegador-custom container">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Main.html">
+                <div class="logo-nav">
+                    <img src="img/Logo.png" alt="Logo UDEO" width="100">
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="Main.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Facultades.html">Facultades</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Iniciar Sesión
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="login.html">Estudiantes</a></li>
+                            <li><a class="dropdown-item" href="loginProfesores.html">Docentes</a></li>
+                            
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Directivos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 buscador-custom" type="search" placeholder="¿Qué buscas?" aria-label="Buscar">
+                    <button class="btn btn-buscar" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero-universidad d-flex align-items-center">
+    <div class="container text-center text-lg-start">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-texto">
+                <span class="badge-bienvenida mb-3">¡Inscripciones Abiertas 2026!</span>
+                <h1>Construye tu futuro en la <span>UDEO</span></h1>
+                <p class="lead mb-4">Educación superior de alta calidad con herramientas modernas, laboratorios avanzados y programas diseñados para los retos de hoy.</p>
+                <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                    <a href="#facultades-seccion" class="btn-hero-principal">Explorar Carreras</a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block text-center">
+                <img src="Img/Campus.webp" alt="Campus UDEO" class="img-fluid img-hero-decorativa">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="facultades-seccion" class="seccion-facultades py-5">
+    <div class="container text-center">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <h2 class="titulo-principal mb-2">Nuestras Facultades y Programas</h2>
+                <p class="subtitulo">Conoce la oferta académica vigente para comenzar tu formación profesional.</p>
+                <div class="linea-decorativa mx-auto"></div>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="tarjeta-pro w-100">
+                    <div class="contenedor-img">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Ingeniería" class="imagen-facultad">
+                    </div>
+                    <div class="contenido-tarjeta">
+                        <h3>Ingeniería</h3>
+                        <p>Innovación, desarrollo tecnológico y soluciones lógicas para el mundo digital.</p>
+                        
+                        <div class="lista-carreras">
+                            <span class="badge-carrera">Ingeniería de Sistemas</span>
+                            <span class="badge-carrera">Ingeniería Industrial</span>
+                            <span class="badge-carrera">Ingeniería Civil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="tarjeta-pro w-100">
+                    <div class="contenedor-img">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Ciencias de la Salud" class="imagen-facultad">
+                    </div>
+                    <div class="contenido-tarjeta">
+                        <h3>Ciencias de la Salud</h3>
+                        <p>Vocación, cuidado del paciente y formación clínica con altos estándares científicos.</p>
+                        
+                        <div class="lista-carreras">
+                            <span class="badge-carrera">Medicina</span>
+                            <span class="badge-carrera">Enfermería</span>
+                            <span class="badge-carrera">Instrumentación Quirúrgica</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="tarjeta-pro w-100">
+                    <div class="contenedor-img">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Ciencias Empresariales" class="imagen-facultad">
+                    </div>
+                    <div class="contenido-tarjeta">
+                        <h3>Ciencias Empresariales</h3>
+                        <p>Liderazgo estratégico, administración eficiente y creación de nuevos modelos de negocio.</p>
+                        
+                        <div class="lista-carreras">
+                            <span class="badge-carrera">Administración de Empresas</span>
+                            <span class="badge-carrera">Contaduría Pública</span>
+                            <span class="badge-carrera">Gestión Empresarial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="seccion-comentarios py-5">
+    <div class="container">
+        
+        <div class="row justify-content-center mb-5 text-center">
+            <div class="col-md-8">
+                <h2 class="titulo-principal mb-2">Comunidad UDEO</h2>
+                <p class="subtitulo">Déjanos tus dudas, opiniones o saludos. ¡Tu voz construye nuestra universidad!</p>
+                <div class="linea-decorativa mx-auto"></div>
+            </div>
+        </div>
+
+        <div class="row g-5 justify-content-center">
+            <div class="col-12 col-lg-5">
+                <div class="tarjeta-formulario h-100">
+                    <h3>Escribe tu comentario</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombreUsuario" class="form-label font-bold">Nombre Completo</label>
+                            <input type="text" class="form-control input-comentario" id="nombreUsuario" placeholder="Ej. Valentina Gómez" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rolUsuario" class="form-label">¿Quién eres?</label>
+                            <select class="form-select input-comentario" id="rolUsuario">
+                                <option value="Estudiante">Estudiante Aspirante</option>
+                                <option value="Estudiante Activo">Estudiante Activo</option>
+                                <option value="Docente">Docente / Profesor</option>
+                                <option value="Visitante">Visitante General</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="textoComentario" class="form-label">Tu Mensaje</label>
+                            <textarea class="form-control input-comentario" id="textoComentario" rows="4" placeholder="Escribe aquí lo que piensas o tus dudas sobre las facultades..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-enviar-comentario">Enviar Comentario</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="contenedor-comentarios-publicados">
+                    <h3>Comentarios Recientes</h3>
+                    
+                    <div class="item-comentario">
+                        <div class="avatar-comentario">JM</div>
+                        <div class="cuerpo-comentario">
+                            <div class="meta-comentario">
+                                <h4>Juliana Marulanda</h4>
+                                <span class="badge-rol user-estudiante">Estudiante Activo</span>
+                            </div>
+                            <p>¡Excelente el plan de estudios de Ingeniería de Sistemas! Las tecnologías que se manejan en desarrollo de software están super actualizadas.</p>
+                            <span class="fecha-comentario">Hace 10 minutos</span>
+                        </div>
+                    </div>
+
+                    <div class="item-comentario">
+                        <div class="avatar-comentario">AM</div>
+                        <div class="cuerpo-comentario">
+                            <div class="meta-comentario">
+                                <h4>Andrés Mendoza</h4>
+                                <span class="badge-rol user-aspirante">Aspirante</span>
+                            </div>
+                            <p>¿Saben cuándo se abren los exámenes de admisión para la facultad de Ciencias de la Salud? Me interesa mucho el programa de Enfermería.</p>
+                            <span class="fecha-comentario">Hace 2 horas</span>
+                        </div>
+                    </div>
+
+                    <div class="item-comentario">
+                        <div class="avatar-comentario">SR</div>
+                        <div class="cuerpo-comentario">
+                            <div class="meta-comentario">
+                                <h4>Sofia Restrepo</h4>
+                                <span class="badge-rol user-visitante">Visitante</span>
+                            </div>
+                            <p>Me encantó la organización de la página y lo claro que muestran las carreras de Gestión Empresarial. Muy moderno todo.</p>
+                            <span class="fecha-comentario">Ayer</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer-principal">
+    <div class="container py-4 text-center text-md-start">
+        <div class="row g-3 align-items-center">
+            <div class="col-md-6">
+                <h4 class="titulo-footer mb-2">UDEO</h4>
+                <p class="texto-footer-info mb-0">Institución de educación superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="texto-footer-info mb-1">📍 Sede Principal - Campus Oriente</p>
+                <p class="texto-footer-info mb-0">📧 soporte@udeo.edu.co</p>
+            </div>
+        </div>
+        <hr class="linea-footer my-3">
+        <div class="text-center">
+            <p class="copyright-texto mb-0">&copy; 2026 UDEO. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

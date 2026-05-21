@@ -1,0 +1,97 @@
+:root {
+    --azul-primario: #004694;
+    --celeste-acento: #00d4ff;
+    --blanco-puro: #ffffff;
+    --gris-fondo: #f4f7f6;
+    --texto-oscuro: #1a1a1a;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-body {
+    background: linear-gradient(135deg, #004694 0%, #001a35 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--blanco-puro);
+    padding: 40px;
+    border-radius: 15px;
+    border-top: 6px solid var(--celeste-acento);
+    position: relative;
+}
+
+.login-logo-container {
+    text-align: center;
+    margin-top: -80px; /* Eleva el logo sobre la tarjeta */
+    margin-bottom: 20px;
+}
+
+.login-logo {
+    width: 90px;
+    height: 90px;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 3px solid var(--celeste-acento);
+}
+
+.text-azul {
+    color: var(--azul-primario);
+}
+
+.input-custom {
+    border-radius: 25px;
+    padding: 12px 20px;
+    border: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.input-custom:focus {
+    border-color: var(--celeste-acento);
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.2);
+    outline: none;
+}
+
+.btn-login {
+    border-radius: 25px;
+    padding: 12px;
+    background-color: var(--azul-primario);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-login:hover {
+    background-color: var(--celeste-acento);
+    color: var(--azul-primario);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.back-link {
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--azul-primario);
+}
+/*hola*/

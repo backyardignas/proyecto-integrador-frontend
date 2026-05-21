@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Contacto.css">
+    <link rel="icon" type="image/png" href="img/heart.png">
+</head>
+<body>
+    /head>
+<body>
+
+   
+    <header class="header-principal w-100">
+        <nav class="navbar navbar-expand-lg navegador-custom container">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-nav">
+                        <img src="img/Logo.png" alt="Logo UDEO" onerror="this.src='https://via.placeholder.com/50?text=U'">
+                    </div>
+                </a>
+
+                <!-- Botón Hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú y Buscador -->
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="Main.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Facultades.html">Facultades</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Iniciar Sesión
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="login.html">Estudiantes</a></li>
+                                <li><a class="dropdown-item" href="loginProfesores.html">Docentes</a></li>
+                                
+                                
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="Contacto.html">Contacto</a></li>
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 buscador-custom" type="search" placeholder="¿Qué buscas?" aria-label="Buscar">
+                        <button class="btn btn-buscar" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+    <section class="banner-contacto">
+        <div class="container">
+            <h1>Contacto <span>UDEO</span></h1>
+            <p>Estamos aquí para escucharte, orientarte y resolver todas tus inquietudes académicas.</p>
+        </div>
+    </section>
+
+    
+    <main class="main-contacto">
+        <div class="tarjeta-contacto-pro">
+            <div class="row g-5">
+                
+                
+                <div class="col-12 col-lg-6">
+                    <h2 class="info-titulo">Escríbenos</h2>
+                    <form id="formularioContacto" onsubmit="procesarEnvio(event);">
+                        <div class="mb-3">
+                            <label for="c-nombre" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control input-custom" id="c-nombre" placeholder="Ej. Alex Monroy" required autocomplete="off">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="c-email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control input-custom" id="c-email" placeholder="correo@ejemplo.com" required autocomplete="off">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="c-asunto" class="form-label">Asunto</label>
+                            <select class="form-select input-custom" id="c-asunto" required>
+                                <option value="" disabled selected>Selecciona el motivo de tu mensaje...</option>
+                                <option value="admisiones">Información de Admisiones</option>
+                                <option value="soporte">Soporte Tecnológico del Portal</option>
+                                <option value="facultades">Duda de Facultades / Programas</option>
+                                <option value="general">Inquietud General</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="c-mensaje" class="form-label">Tu Mensaje</label>
+                            <textarea class="form-control input-custom" id="c-mensaje" rows="5" placeholder="Escribe tu mensaje detallado aquí..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-enviar-contacto">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+                
+                <div class="col-12 col-lg-6">
+                    <h2 class="info-titulo">Información Institucional</h2>
+
+                    <!-- Dirección -->
+                    <div class="bloque-info">
+                        <div class="icono-bloque">📍</div>
+                        <div class="contenido-bloque">
+                            <h4>Ubicación Principal</h4>
+                            <p>Campus Oriente - Vía Principal Km 2, Oriente Antioqueño.</p>
+                        </div>
+                    </div>
+
+                  
+                    <div class="bloque-info">
+                        <div class="icono-bloque">📞</div>
+                        <div class="contenido-bloque">
+                            <h4>Línea de Atención</h4>
+                            <p>+57 (604) 555-0199 - Ext. Admisiones 102</p>
+                        </div>
+                    </div>
+
+                    <div class="bloque-info">
+                        <div class="icono-bloque">🕒</div>
+                        <div class="contenido-bloque">
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 8:00 AM - 12:00 PM | 2:00 PM - 6:00 PM</p>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bloque-info">
+                        <div class="icono-bloque">📧</div>
+                        <div class="contenido-bloque">
+                            <h4>Canal de Correo Directo</h4>
+                            <p>soporte@udeo.edu.co | admisiones@udeo.edu.co</p>
+                        </div>
+                    </div>
+
+                 
+                    <div class="mapa-simulacion mt-4">
+                       <iframe src"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.1234567890123!2d-75.56789012345678!3d6.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44234567890123%3A0xabcdef1234567890!2sUniversidad%20de%20Oriente%20(UDEO)!5e0!3m2!1ses-419!2sco!4v1700000000000" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <div id="modalExito" class="modal-custom">
+        <div class="modal-caja">
+            <div class="modal-icono">🎉</div>
+            <h3>¡Mensaje Recibido!</h3>
+            <p id="modalMensaje">Gracias por comunicarte con nosotros. Tu solicitud ha sido enviada con éxito al departamento correspondiente.</p>
+            <button class="btn-cerrar-modal" onclick="cerrarModalExito();">Entendido</button>
+        </div>
+    </div>
+
+    
+    <footer class="footer-principal mt-auto">
+        <div class="container py-4 text-center text-md-start">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-6">
+                    <h4 class="titulo-footer mb-2">UDEO</h4>
+                    <p class="texto-footer-info mb-0">Institución de educación superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional de Colombia.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                  
+                </div>
+            </div>
+            <hr class="linea-footer my-3">
+            <div class="text-center">
+                <p class="copyright-texto mb-0">&copy; 2026 UDEO. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/Contacto.js"></script>
+    
+   
+
+</body>
+</html>

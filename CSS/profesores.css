@@ -1,0 +1,218 @@
+/* Importamos una tipografía más moderna */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --blanco-puro: #ffffff;
+    --lila-oscuro: #6366f1; /* Un tono índigo/lila moderno */
+    --lila-medio: #818cf8;
+    --lila-fondo: #f4f5ff;
+    --texto-oscuro: #1e1b4b;
+    --gris-suave: #f8fafc;
+    --borde-suave: #e2e8f0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--lila-fondo);
+    color: var(--texto-oscuro);
+}
+
+/* --- NAVBAR ESTILIZADO --- */
+.header-principal {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid var(--borde-suave);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navegador-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+}
+
+.logo-nav img {
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-nav img:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    color: var(--texto-oscuro) !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--lila-oscuro) !important;
+    background-color: rgba(99, 102, 241, 0.08);
+}
+
+/* Buscador Tipo Píldora Moderno */
+.buscador-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.buscador-custom {
+    border-radius: 30px;
+    border: 1px solid var(--borde-suave);
+    padding: 10px 20px;
+    padding-right: 110px; /* Espacio para el botón interno */
+    font-size: 0.85rem;
+    background-color: var(--gris-suave);
+    transition: all 0.3s ease;
+    width: 260px;
+}
+
+.buscador-custom:focus {
+    background-color: var(--blanco-puro);
+    border-color: var(--lila-medio);
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.15);
+    width: 300px; /* Se expande suavemente al dar click */
+}
+
+.btn-buscar {
+    position: absolute;
+    right: 5px;
+    border-radius: 25px;
+    padding: 6px 18px;
+    background: linear-gradient(135deg, var(--lila-oscuro), var(--lila-medio));
+    border: none;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-buscar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(99, 102, 241, 0.3);
+    color: white;
+}
+
+/* --- TARJETAS Y CONTENEDORES --- */
+.card {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--blanco-puro);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02) !important;
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    overflow: hidden;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--texto-oscuro);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--lila-oscuro);
+    border-radius: 2px;
+}
+
+/* Inputs del Formulario */
+.form-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.form-control {
+    border-radius: 12px;
+    border: 1px solid var(--borde-suave);
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--lila-medio);
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.1);
+}
+
+/* Botón Principal */
+.btn-primary {
+    background: linear-gradient(135deg, var(--lila-oscuro), var(--lila-medio));
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(99, 102, 241, 0.3);
+}
+
+/* --- TABLAS --- */
+.table {
+    margin-bottom: 0;
+}
+
+.table-light {
+    background-color: var(--gris-suave);
+}
+
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    padding: 16px;
+    border-bottom: 2px solid var(--borde-suave);
+}
+
+.table td {
+    padding: 16px;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+/* Botón Eliminar Estilizado */
+.btn-danger {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.btn-danger:hover {
+    background-color: #ef4444;
+    color: white;
+}

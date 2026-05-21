@@ -1,0 +1,523 @@
+/* ==========================================================================
+   UDEO - HOJA DE ESTILOS UNIFICADA GENERAL COMPLETA V3
+   ========================================================================== */
+
+:root {
+    --azul-oscuro: #002855;
+    --azul-primario: #004694;
+    --celeste-acento: #00d6ff;
+    --blanco-puro: #ffffff;
+    --gris-fondo: #f4f7f6;
+    --texto-oscuro: #212529;
+}
+
+/* --- 1. HEADER Y NAVEGACIÓN (COMPATIBLE CON BOOTSTRAP TOGGLER) --- */
+.header-principal {
+    background-color: rgba(0, 70, 148, 0.9) !important; 
+    backdrop-filter: blur(14px); 
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 2px solid rgba(0, 214, 255, 0.25); 
+    box-shadow: 0 8px 32px rgba(0, 26, 53, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navegador-custom .navbar-collapse {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navegador-custom .navbar-nav {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding-left: 0;
+    list-style: none !important;
+}
+
+.logo-nav {
+    width: 52px;
+    height: 52px;
+    background-color: var(--blanco-puro);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--celeste-acento);
+    box-shadow: 0 0 15px rgba(0, 214, 255, 0.4); 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+.logo-nav img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.logo-nav:hover {
+    transform: scale(1.08) rotate(5deg);
+    box-shadow: 0 0 25px var(--celeste-acento);
+}
+
+.navegador-custom .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 8px 16px !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navegador-custom .nav-link:hover, 
+.navegador-custom .nav-link:focus,
+.navegador-custom .nav-link.active {
+    color: var(--blanco-puro) !important;
+    background-color: rgba(0, 214, 255, 0.15) !important;
+    text-shadow: 0 0 8px rgba(0, 214, 255, 0.6);
+}
+
+/* Submenú Desplegable (Dropdown) */
+.navegador-custom .dropdown-menu {
+    background-color: var(--azul-oscuro) !important;
+    border: 1px solid rgba(0, 214, 255, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 8px 0 !important;
+    margin-top: 10px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* CORRECCIÓN EXCLUSIVA DE COLOR PARA LA LETRA DEL SUBMENÚ */
+.navegador-custom .dropdown-menu .dropdown-item {
+    color: var(--blanco-puro) !important; /* Fuerza el color blanco de la tipografía */
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 20px !important;
+    transition: all 0.25s ease;
+}
+
+.navegador-custom .dropdown-item:hover {
+    background-color: rgba(0, 214, 255, 0.2) !important;
+    color: var(--celeste-acento) !important; /* Resalta el texto en celeste al pasar el cursor */
+}
+
+.navegador-custom .dropdown-divider {
+    border-top: 1px solid rgba(0, 214, 255, 0.15) !important;
+    margin: 6px 0 !important;
+}
+
+/* Buscador */
+.buscador-custom {
+    border-radius: 25px !important;
+    border: 1px solid rgba(0, 214, 255, 0.3) !important;
+    padding: 9px 20px !important;
+    font-size: 0.85rem !important;
+    background-color: rgba(0, 26, 53, 0.4) !important;
+    color: var(--blanco-puro) !important;
+    outline: none !important;
+    width: 200px !important;
+    transition: all 0.4s ease !important;
+}
+
+.buscador-custom::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.buscador-custom:focus {
+    width: 260px !important;
+    background-color: var(--blanco-puro) !important;
+    color: var(--texto-oscuro) !important;
+    border-color: var(--celeste-acento) !important;
+    box-shadow: 0 0 15px rgba(0, 214, 255, 0.3) !important;
+}
+
+.btn-buscar {
+    border-radius: 25px !important;
+    padding: 9px 24px !important;
+    background: linear-gradient(135deg, var(--celeste-acento), #00bcd4) !important;
+    border: none !important;
+    color: var(--azul-oscuro) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 214, 255, 0.2);
+}
+
+.btn-buscar:hover {
+    background: var(--blanco-puro) !important;
+    color: var(--azul-primario) !important;
+    transform: translateY(-2px);
+}
+
+/* --- 2. HERO BANNER PRINCIPAL --- */
+.hero-universidad {
+    background: radial-gradient(circle at 10% 20%, var(--azul-oscuro) 0%, var(--azul-primario) 90%);
+    padding: 90px 0;
+    min-height: 65vh;
+    border-bottom: 2px solid rgba(0, 214, 255, 0.15);
+}
+
+.badge-bienvenida {
+    display: inline-block;
+    background-color: rgba(0, 214, 255, 0.15);
+    color: var(--celeste-acento);
+    border: 1px solid rgba(0, 214, 255, 0.3);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hero-texto h1 {
+    color: var(--blanco-puro);
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-texto h1 span {
+    color: var(--celeste-acento);
+    text-shadow: 0 0 15px rgba(0, 214, 255, 0.5);
+}
+
+.hero-texto p {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.btn-hero-principal {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--celeste-acento), #00bcd4);
+    color: var(--azul-oscuro);
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-principal:hover {
+    background: var(--blanco-puro);
+    color: var(--azul-primario);
+    transform: translateY(-2px);
+}
+
+.img-hero-decorativa {
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --- 3. SECCIÓN FACULTADES Y CARRERAS DIRECTAS --- */
+.seccion-facultades {
+    background-color: var(--gris-fondo);
+}
+
+.titulo-principal {
+    color: var(--azul-primario);
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+.subtitulo {
+    color: var(--texto-oscuro);
+    opacity: 0.75;
+    font-size: 1.05rem;
+    font-weight: 300;
+}
+
+.linea-decorativa {
+    width: 60px;
+    height: 3px;
+    background-color: var(--celeste-acento);
+    border-radius: 2px;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0, 214, 255, 0.5);
+}
+
+.tarjeta-pro {
+    background-color: var(--blanco-puro);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 70, 148, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.tarjeta-pro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 70, 148, 0.12);
+    border-color: rgba(0, 214, 255, 0.3);
+}
+
+.contenedor-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.imagen-facultad {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tarjeta-pro:hover .imagen-facultad {
+    transform: scale(1.05);
+}
+
+.contenido-tarjeta {
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.contenido-tarjeta h3 {
+    color: var(--azul-oscuro);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contenido-tarjeta p {
+    color: var(--texto-oscuro);
+    opacity: 0.7;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* Bloque contenedor de Carreras */
+.lista-carreras {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto; /* Empuja el listado simétricamente hacia abajo */
+}
+
+/* Etiquetas (*Badges*) Profesionales de las Carreras */
+.badge-carrera {
+    background-color: var(--gris-fondo);
+    color: var(--azul-oscuro);
+    font-size: 0.82rem;
+    font-weight: 400;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 3px solid var(--celeste-acento);
+    transition: all 0.25s ease;
+}
+
+.tarjeta-pro:hover .badge-carrera {
+    background-color: rgba(0, 70, 148, 0.05);
+}
+
+/* --- 4. SECCIÓN INTERACTIVA DE COMENTARIOS --- */
+.seccion-comentarios {
+    background-color: var(--blanco-puro);
+}
+
+.tarjeta-formulario {
+    background-color: var(--gris-fondo);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 70, 148, 0.05);
+}
+
+.tarjeta-formulario h3, 
+.contenedor-comentarios-publicados h3 {
+    color: var(--azul-oscuro);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-comentario {
+    border-radius: 8px !important;
+    border: 1px solid rgba(0, 70, 148, 0.15) !important;
+    padding: 10px 14px !important;
+    font-size: 0.9rem !important;
+    background-color: var(--blanco-puro) !important;
+    color: var(--texto-oscuro) !important;
+}
+
+.input-comentario:focus {
+    border-color: var(--celeste-acento) !important;
+    box-shadow: 0 0 10px rgba(0, 214, 255, 0.15) !important;
+}
+
+.btn-enviar-comentario {
+    width: 100%;
+    background-color: var(--azul-primario);
+    color: var(--blanco-puro);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-enviar-comentario:hover {
+    background-color: var(--azul-oscuro);
+    box-shadow: 0 4px 12px rgba(0, 70, 148, 0.2);
+}
+
+/* Feed de la Comunidad */
+.contenedor-comentarios-publicados {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-comentario {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--gris-fondo);
+    border-radius: 12px;
+    border-left: 4px solid var(--azul-primario);
+    text-align: left;
+}
+
+.avatar-comentario {
+    width: 45px;
+    height: 45px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco-puro);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.cuerpo-comentario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.meta-comentario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.meta-comentario h4 {
+    font-size: 1rem;
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.badge-rol {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.user-estudiante { background-color: rgba(0, 214, 255, 0.15); color: #0097a7; }
+.user-aspirante { background-color: rgba(0, 70, 148, 0.1); color: var(--azul-primario); }
+.user-visitante { background-color: rgba(0, 0, 0, 0.05); color: var(--texto-oscuro); }
+
+.cuerpo-comentario p {
+    color: var(--texto-oscuro);
+    opacity: 0.85;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 6px;
+}
+
+.fecha-comentario {
+    font-size: 0.75rem;
+    color: var(--texto-oscuro);
+    opacity: 0.5;
+    font-weight: 300;
+}
+
+/* --- 5. FOOTER DE LA PÁGINA --- */
+.footer-principal {
+    background-color: var(--azul-oscuro);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    border-top: 2px solid rgba(0, 214, 255, 0.25);
+}
+
+.titulo-footer {
+    color: var(--blanco-puro);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.texto-footer-info {
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.linea-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.copyright-texto {
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (RESOLUCIÓN DE ERRORES EXCLUSIVOS DE MENÚ MÓVIL)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .navegador-custom .navbar-nav {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        list-style: none !important;
+    }
+
+    .navegador-custom .navbar-nav li {
+        list-style-type: none !important;
+        list-style: none !important;
+        width: 100%;
+    }
+
+    .navegador-custom .nav-link {
+        color: var(--blanco-puro) !important;
+        padding: 10px 12px !important;
+        display: block;
+    }
+
+    /* Limpieza total de los estilos heredados del dropdown en móvil */
+    .navegador-custom .dropdown-menu {
+        background-color: rgba(0, 40, 85, 0.95) !important;
+        padding-left: 15px !important;
+        list-style: none !important;
+        box-shadow: none !important;
+    }
+
+    .navegador-custom .dropdown-menu li {
+        list-style: none !important;
+        list-style-type: none !important;
+    }
+}
