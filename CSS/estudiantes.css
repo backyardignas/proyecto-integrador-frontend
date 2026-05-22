@@ -324,3 +324,86 @@ input:focus, select:focus {
         font-size: 1.15rem;
     }
 }
+/* ==========================================
+   ESTILOS ADICIONALES PARA FORMULARIO Y NOTAS
+   ========================================== */
+
+/* Contenedor del grupo de notas en el formulario */
+.grupo-entradas-notas {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.casilla-nota {
+    flex: 1;
+}
+
+.casilla-nota label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.casilla-nota input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box;
+}
+
+/* Tarjeta de Estudiante - Texto Carrera */
+.carrera-text {
+    color: #6366f1;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* Sección interna de calificaciones en la tarjeta */
+.seccion-notas {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+}
+
+.desglose-notas {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.fila-definitiva {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #cbd5e1;
+}
+
+.etiqueta-final {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1e1b4b;
+}
+
+.valor-final {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Colores dinámicos del estado */
+.estado-aprobado {
+    color: #10b981; /* Verde */
+}
+
+.estado-reprobado {
+    color: #ef4444; /* Rojo */
+}
