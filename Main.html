@@ -6,10 +6,14 @@
     <title>Universidad de Oriente - Inicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Iconos de Bootstrap para las nuevas secciones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="icon" type="image/png" href="IMG/librito.png">
 </head>
 <body>
 
+    <!-- CONSERVADO TU HEADER Y NAV ORIGINAL -->
     <header class="header-principal w-100">
         <nav class="navbar navbar-expand-lg navegador-custom container">
             <div class="container-fluid">
@@ -26,7 +30,8 @@
                 <div class="collapse navbar-collapse" id="menuPrincipal">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Facultades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#identidad">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Facultades.html">Valores</a></li>
                         
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -35,10 +40,9 @@
                             <ul class="dropdown-menu border-0 shadow" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="login.html">Estudiantes</a></li>
                                 <li><a class="dropdown-item" href="loginProfesores.html">Docentes</a></li>
-                                
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
 
                     <form class="d-flex" role="search">
@@ -51,13 +55,48 @@
     </header>
 
     <main>
+        <!-- CONSERVADO TU BANNER ORIGINAL -->
         <section>
             <div class="Banner">
                 <img src="img/Banner.png" alt="Banner Universitario">
             </div>
         </section>
 
-        <section class="features-main">
+        <!-- SECCIÓN NUEVA: MISIÓN Y VISIÓN -->
+        <section id="identidad" class="seccion-identidad">
+            <div class="contenedor-identidad">
+                <div class="cuadricula-identidad">
+                    
+                    <!-- Tarjeta Misión -->
+                    <div class="tarjeta-identidad mision">
+                        <div class="icono-identidad">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+                        <h2>Nuestra Misión</h2>
+                        <div class="linea-decorativa"></div>
+                        <p>
+                            Brindar una educación superior de la más alta calidad, impulsando el desarrollo humano integral, la investigación y la innovación tecnológica. Nos comprometemos a formar profesionales líderes con pensamiento crítico, competencias globales y un alto sentido de responsabilidad ética y social que impacte positivamente a la comunidad.
+                        </p>
+                    </div>
+
+                    <!-- Tarjeta Visión -->
+                    <div class="tarjeta-identidad vision">
+                        <div class="icono-identidad">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <h2>Nuestra Visión</h2>
+                        <div class="linea-decorativa"></div>
+                        <p>
+                            Para el año <strong>2031</strong>, consolidarnos como una institución de educación superior referente por su excelencia académica, la solidez formativa de sus estudiantes y la alta competitividad laboral de sus egresados. Buscamos liderar el desarrollo científico y tecnológico, siendo un motor clave para la transformación de nuestro entorno.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONSERVADO TU SECCIÓN DE VALORES / FEATURES -->
+        <section id="valores-seccion" class="features-main">
             <div class="card-info">
                 <div class="icon-box">🚀</div>
                 <h3>Innovación</h3>
@@ -78,6 +117,7 @@
         </section>
     </main>
 
+    <!-- CONSERVADO TU FOOTER ORIGINAL -->
     <footer>
         <p>&copy; 2026 Universidad de Oriente - Todos los derechos reservados.</p>
     </footer>

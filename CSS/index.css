@@ -14,6 +14,7 @@
     --gris-fondo: #f0f2f5;
     --azul-oscuro: #001a35;
     --texto-oscuro: #1a1a1a;
+    --texto-mutado: #555555;
 }
 
 body {
@@ -22,6 +23,9 @@ body {
     line-height: 1.6;
 }
 
+/* ==========================================================================
+   CONSERVADO: HEADER Y NAVEGACIÓN ORIGINAL
+   ========================================================================== */
 .header-principal {
     background-color: var(--azul-primario);
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -116,6 +120,9 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* ==========================================================================
+   CONSERVADO: CONTENEDOR DE BANNER
+   ========================================================================== */
 .Banner {
     width: 90%;
     max-width: 1200px;
@@ -139,6 +146,83 @@ body {
     transform: scale(1.05);
 }
 
+/* ==========================================================================
+   ESTILOS NUEVOS: SECCIÓN MISIÓN Y VISIÓN
+   ========================================================================== */
+.seccion-identidad {
+    padding: 30px 0;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedor-identidad {
+    width: 100%;
+}
+
+.cuadricula-identidad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.tarjeta-identidad {
+    background-color: var(--blanco-puro);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-identidad:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 70, 148, 0.1);
+}
+
+.tarjeta-identidad.mision { border-top: 5px solid var(--azul-primario); }
+.tarjeta-identidad.vision { border-top: 5px solid var(--celeste-acento); }
+
+.icono-identidad {
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.mision .icono-identidad { background-color: rgba(0, 70, 148, 0.08); color: var(--azul-primario); }
+.vision .icono-identidad { background-color: rgba(0, 212, 255, 0.12); color: var(--azul-primario); }
+
+.tarjeta-identidad h2 {
+    font-size: 1.5rem;
+    color: var(--azul-primario);
+    font-weight: 600;
+}
+
+.linea-decorativa {
+    width: 45px;
+    height: 3px;
+    margin: 12px 0 20px 0;
+    border-radius: 2px;
+}
+
+.mision .linea-decorativa { background-color: var(--azul-primario); }
+.vision .linea-decorativa { background-color: var(--celeste-acento); }
+
+.tarjeta-identidad p {
+    color: var(--texto-mutado);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   CONSERVADO: FEATURES / VALORES ORIGINAL
+   ========================================================================== */
 .features-main {
     display: flex;
     justify-content: center;
@@ -187,6 +271,11 @@ body {
     font-size: 0.9rem;
 }
 
+.icon-box {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -202,6 +291,9 @@ body {
 .card-info:nth-child(2) { animation-delay: 0.4s; }
 .card-info:nth-child(3) { animation-delay: 0.6s; }
 
+/* ==========================================================================
+   CONSERVADO: FOOTER ORIGINAL
+   ========================================================================== */
 footer {
     text-align: center;
     padding: 50px;
@@ -212,9 +304,17 @@ footer {
     letter-spacing: 1px;
 }
 
+/* ==========================================================================
+   CONSERVADO: MEDIAS QUERIES ORIGINAL + EXTENSIONES
+   ========================================================================== */
 @media (max-width: 991px) {
     .navegador-custom {
         padding: 1rem 5%;
+    }
+
+    .cuadricula-identidad {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
     .features-main {
@@ -233,4 +333,3 @@ footer {
         width: 95%;
     }
 }
-/*hola*/
