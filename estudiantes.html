@@ -21,22 +21,23 @@
             <a href="Main.html" class="btn-back">Cerrar Sesión</a>
         </div>
     </header>
-    
+
     <main class="container">
+
+        <!-- Formulario: bloqueado por JS para el rol estudiante -->
         <section class="form-section">
-            <h2>Registrar Nuevo Estudiante</h2>
+            <h2>Mis Datos</h2>
             <form id="formulario-registro">
-                <!-- Campo oculto para el índice de edición -->
                 <input type="hidden" id="indice-edicion">
-                
+
                 <div class="input-group">
                     <label>Nombre Completo</label>
-                    <input type="text" id="nombre" placeholder="Ej: Alex Monroy" required>
+                    <input type="text" id="nombre" placeholder="Ej: Alex Monroy">
                 </div>
-                
+
                 <div class="input-group">
-                    <label>Rol / Carrera</label>
-                    <select id="carrera" required>
+                    <label>Carrera</label>
+                    <select id="carrera">
                         <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
                         <option value="Derecho">Derecho</option>
                         <option value="Administración">Administración</option>
@@ -44,35 +45,40 @@
                     </select>
                 </div>
 
-                <!-- Bloque de tres notas lado a lado -->
                 <div class="grupo-entradas-notas">
                     <div class="casilla-nota">
                         <label>Nota 1 (30%)</label>
-                        <input type="number" id="nota1" min="0" max="5" step="0.1" placeholder="0.0" required>
+                        <input type="number" id="nota1" min="0" max="5" step="0.1" placeholder="0.0">
                     </div>
                     <div class="casilla-nota">
                         <label>Nota 2 (30%)</label>
-                        <input type="number" id="nota2" min="0" max="5" step="0.1" placeholder="0.0" required>
+                        <input type="number" id="nota2" min="0" max="5" step="0.1" placeholder="0.0">
                     </div>
                     <div class="casilla-nota">
                         <label>Nota 3 (40%)</label>
-                        <input type="number" id="nota3" min="0" max="5" step="0.1" placeholder="0.0" required>
+                        <input type="number" id="nota3" min="0" max="5" step="0.1" placeholder="0.0">
                     </div>
                 </div>
 
+                <!-- El JS desactiva este botón y cambia su texto -->
                 <button type="submit" id="btn-guardar">Guardar Registro</button>
             </form>
+
+            <!-- Aviso visible de solo lectura -->
+            <div class="aviso-readonly">
+                <span>&#128274;</span> Las notas y datos son gestionados por tu profesor.
+            </div>
         </section>
 
         <section class="list-section">
             <h2>Estudiantes Registrados</h2>
             <div id="lista-estudiantes" class="grid-estudiantes">
-                <!-- Las tarjetas de los estudiantes se inyectan aquí -->
+                <!-- Tarjetas inyectadas por JS — sin botones de editar/borrar -->
             </div>
         </section>
+
     </main>
 
-    <!-- Enlace a tu lógica separada -->
     <script src="JS/estudiantes.js"></script>
 </body>
 </html>

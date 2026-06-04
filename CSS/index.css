@@ -89,6 +89,33 @@ body {
     transition: all 0.3s ease;
 }
 
+        .navegador-custom .dropdown-menu {
+            background-color: var(--azul-oscuro) !important;
+            border: 1px solid rgba(0, 214, 255, 0.3) !important;
+            border-radius: 12px !important;
+            padding: 8px 0 !important;
+            margin-top: 10px !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .navegador-custom .dropdown-menu .dropdown-item {
+            color: var(--blanco-puro) !important;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 10px 20px !important;
+            transition: all 0.25s ease;
+        }
+
+        .navegador-custom .dropdown-item:hover {
+            background-color: rgba(0, 214, 255, 0.2) !important;
+            color: var(--celeste-acento) !important;
+        }
+
+        .navegador-custom .dropdown-divider {
+            border-top: 1px solid rgba(0, 214, 255, 0.15) !important;
+            margin: 6px 0 !important;
+        }
+
 .buscador-custom::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }

@@ -1,26 +1,22 @@
+// Procesa el envío del formulario de correspondencia
+function procesarEnvio(event) {
+    event.preventDefault(); // Impedimos la recarga innecesaria de la pantalla
+    
+    const nombre = document.getElementById('c-nombre').value;
+    const modal = document.getElementById('modalExito');
+    
+    // Inyectamos dinámicamente un mensaje personalizado con el nombre del usuario
+    document.getElementById('modalMensaje').textContent = `¡Muchas gracias ${nombre}! Tu mensaje ha sido recibido con éxito por nuestro equipo de soporte de la UDEO. Nos comunicaremos contigo muy pronto.`;
+    
+    // Activamos la visibilidad del modal flotante estético
+    modal.style.display = 'flex';
+}
 
-        function procesarEnvio(e) {
-            e.preventDefault();
-            
-            const nombre = document.getElementById('c-nombre').value;
-            const asunto = document.getElementById('c-asunto').value;
-            
-            let departamento = "Atención General";
-            if (asunto === "admisiones") departamento = "Oficina de Admisiones y Registro";
-            if (asunto === "soporte") departamento = "Dirección de Tecnologías (TI)";
-            if (asunto === "facultades") departamento = "Decanatura Académica";
-
-            // Modificar mensaje del modal dinámicamente
-            document.getElementById('modalMensaje').innerText = `Hola ${nombre}, tu mensaje ha sido radicado correctamente en la ${departamento}. Nos pondremos en contacto contigo lo antes posible.`;
-            
-            // Mostrar modal
-            document.getElementById('modalExito').classList.add('activo');
-            
-            // Limpiar formulario
-            document.getElementById('formularioContacto').reset();
-        }
-
-        function cerrarModalExito() {
-            document.getElementById('modalExito').classList.remove('activo');
-        }
-  
+// Cierra la ventana modal flotante de confirmación
+function cerrarModalExito() {
+    const modal = document.getElementById('modalExito');
+    modal.style.display = 'none';
+    
+    // Reseteamos por completo los campos de texto del formulario
+    document.getElementById('formularioContacto').reset();
+}

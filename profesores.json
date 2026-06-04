@@ -1,0 +1,15 @@
+[
+  {
+    "nombre": "Diego Giraldo",
+    "materia": "FrontEnd y Lógica de Programación",
+    "horario": "06:00 PM - 08:00 PM",
+    "clave": "UDEO2026"
+  },
+  {
+    "nombre": "Andres Llanos",
+    "materia": "Bases de Datos SQL",
+    "horario": "02:00 PM - 04:00 PM",
+    "clave": "UDEO2026"
+  }
+]
+  

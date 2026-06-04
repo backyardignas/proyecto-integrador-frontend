@@ -1,112 +1,139 @@
-// Variable global para almacenar los datos
-let datos = [];
-let editIndex = null; // Guarda el índice de la fila que se está editando
-
-window.onload = function() {
-    const usuario = localStorage.getItem("nombreProfe");
-    
-    if (usuario) {
-        document.getElementById("texto-bienvenida").innerText = "Bienvenido, " + usuario;
-        cargarDatos();
-    } else {
-        document.getElementById("texto-bienvenida").innerText = "Bienvenido, Usuario Invitado";
-        cargarDatos();
+// JS/profesores.js
+document.addEventListener('DOMContentLoaded', () => {
+    const sesion = JSON.parse(localStorage.getItem('sesion_activa'));
+    if (sesion) {
+        document.getElementById('saludo-usuario').textContent = `Prof. ${sesion.nombre}`;
     }
-};
 
-// Función única para Agregar o Actualizar
-function guardar() {
-    const n = document.getElementById("nombre").value.trim();
-    const m = document.getElementById("materia").value.trim();
-    const h = document.getElementById("horario").value.trim();
+    actualizarTablaProfesores();
+    rellenarSelectorEstudiantes();
+    mostrarEstudiantesParaProfesor();
 
-    if (n && m && h) {
-        if (editIndex === null) {
-            // MODO AGREGAR: Insertar nuevo registro
-            datos.push({ nombre: n, materia: m, horario: h });
-        } else {
-            // MODO EDITAR: Actualizar el registro existente
-            datos[editIndex] = { nombre: n, materia: m, horario: h };
-            editIndex = null; // Resetear el estado de edición
-            
-            // Regresar el botón a su estado original
-            const btn = document.getElementById("btn-guardar");
-            btn.innerText = "Guardar Datos";
-            btn.classList.remove("btn-warning");
-            btn.classList.add("btn-primary");
-        }
-        
-        // Limpiar campos del formulario
-        limpiarFormulario();
-        dibujarTabla();
-    } else {
-        alert("Por favor, completa todos los campos.");
-    }
-}
-
-// Cargar los datos de la tabla de vuelta al formulario
-function prepararEditar(index) {
-    editIndex = index;
-    const registro = datos[index];
-
-    // Pasar los valores de la tabla a los inputs
-    document.getElementById("nombre").value = registro.nombre;
-    document.getElementById("materia").value = registro.materia;
-    document.getElementById("horario").value = registro.horario;
-
-    // Transformar visualmente el botón de guardar a modo actualización
-    const btn = document.getElementById("btn-guardar");
-    btn.innerText = "Actualizar Datos";
-    btn.classList.remove("btn-primary");
-    btn.classList.add("btn-warning"); // Color naranja/amarillo para denotar edición
-}
-
-function dibujarTabla() {
-    const lista = document.getElementById("lista");
-    lista.innerHTML = "";
+   
+    document.getElementById('professor-form').addEventListener('submit', procesarProfesor);
     
-    datos.forEach((item, index) => {
-        const fila = `
-            <tr>
-                <td>${item.nombre}</td>
-                <td>${item.materia}</td>
-                <td>${item.horario}</td>
-                <td class="text-end text-nowrap">
-                    <button class="btn btn-edit btn-sm me-2" onclick="prepararEditar(${index})">
-                        Editar
-                    </button>
-                    <button class="btn btn-danger btn-sm" onclick="eliminar(${index})">
-                        Eliminar
-                    </button>
-                </td>
-            </tr>
+    
+    document.getElementById('form-notas').addEventListener('submit', actualizarNotasDeAlumno);
+});
+
+function actualizarTablaProfesores() {
+    const tabla = document.getElementById('lista-profesores');
+    const profesores = JSON.parse(localStorage.getItem('bd_profesores')) || [];
+    tabla.innerHTML = '';
+
+    profesores.forEach((profe, posicion) => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${profe.nombre}</td>
+            <td>${profe.materia}</td>
+            <td>${profe.horario}</td>
+            <td>
+                <button onclick="prepararEdicionProfe(${posicion})" style="background:#f39c12; color:white; border:none; padding:4px 10px; border-radius:4px; cursor:pointer;">Editar</button>
+                <button onclick="borrarProfesor(${posicion})" style="background:#e74c3c; color:white; border:none; padding:4px 10px; border-radius:4px; cursor:pointer; margin-left:5px;">Borrar</button>
+            </td>
         `;
-        lista.innerHTML += fila;
+        tabla.appendChild(fila);
     });
 }
 
-function eliminar(index) {
-    // Si estamos editando esa misma fila, cancelamos la edición primero
-    if (editIndex === index) {
-        alert("No puedes eliminar el registro mientras lo estás editando.");
+function procesarProfesor(e) {
+    e.preventDefault();
+    const profesores = JSON.parse(localStorage.getItem('bd_profesores')) || [];
+    const idEdicion = document.getElementById('indice-edicion').value;
+
+    const datosProfe = {
+        nombre: document.getElementById('nombre').value.trim(),
+        materia: document.getElementById('materia').value.trim(),
+        horario: document.getElementById('horario').value.trim(),
+        clave: "UDEO2026" // Mantiene la clave por defecto al crear nuevos desde el panel
+    };
+
+    if (idEdicion === "") {
+        profesores.push(datosProfe);
+    } else {
+        profesores[idEdicion] = datosProfe;
+        document.getElementById('indice-edicion').value = "";
+        document.getElementById('form-titulo').textContent = "Registrar Profesor";
+    }
+
+    localStorage.setItem('bd_profesores', JSON.stringify(profesores));
+    document.getElementById('professor-form').reset();
+    actualizarTablaProfesores();
+}
+
+function prepararEdicionProfe(posicion) {
+    const profesores = JSON.parse(localStorage.getItem('bd_profesores'));
+    const profe = profesores[posicion];
+
+    document.getElementById('nombre').value = profe.nombre;
+    document.getElementById('materia').value = profe.materia;
+    document.getElementById('horario').value = profe.horario;
+    document.getElementById('indice-edicion').value = posicion;
+    document.getElementById('form-titulo').textContent = "Modificar Datos Profesor";
+}
+
+function borrarProfesor(posicion) {
+    if (confirm("¿Estás seguro de eliminar a este docente?")) {
+        const profesores = JSON.parse(localStorage.getItem('bd_profesores'));
+        profesores.splice(posicion, 1);
+        localStorage.setItem('bd_profesores', JSON.stringify(profesores));
+        actualizarTablaProfesores();
+    }
+}
+
+function rellenarSelectorEstudiantes() {
+    const select = document.getElementById('sel-estudiante');
+    const estudiantes = JSON.parse(localStorage.getItem('bd_estudiantes')) || [];
+    select.innerHTML = '<option value="">-- Selecciona un estudiante --</option>';
+    
+    estudiantes.forEach((est, index) => {
+        const opcion = document.createElement('option');
+        opcion.value = index;
+        opcion.textContent = est.nombre;
+        select.appendChild(opcion);
+    });
+}
+
+function mostrarEstudiantesParaProfesor() {
+    const listaProfe = document.getElementById('lista-estudiantes-profe');
+    const estudiantes = JSON.parse(localStorage.getItem('bd_estudiantes')) || [];
+    listaProfe.innerHTML = '';
+
+    estudiantes.forEach(est => {
+        const n1 = parseFloat(est.nota1) || 0;
+        const n2 = parseFloat(est.nota2) || 0;
+        const n3 = parseFloat(est.nota3) || 0;
+        const de_verdad_final = ((n1 * 0.3) + (n2 * 0.3) + (n3 * 0.4)).toFixed(1);
+
+        const bloque = document.createElement('div');
+        bloque.style = "background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 12px; border-left: 5px solid #2c3e50;";
+        bloque.innerHTML = `
+            <h5 style="margin:0 0 5px 0; font-size:1.05rem;">${est.nombre} <small style="color:#95a5a6; font-size:0.8rem;">(${est.carrera})</small></h5>
+            <p style="margin:0 0 5px 0; font-size:0.9rem;">Notas: N1 (30%): <strong>${n1}</strong> | N2 (30%): <strong>${n2}</strong> | N3 (40%): <strong>${n3}</strong></p>
+            <p style="margin:0; font-size:0.95rem;"><strong>Definitiva Actual:</strong> <span style="color:${de_verdad_final >= 3 ? '#2ecc71' : '#e74c3c'}; font-weight:bold;">${de_verdad_final}</span></p>
+        `;
+        listaProfe.appendChild(bloque);
+    });
+}
+
+function actualizarNotasDeAlumno(e) {
+    e.preventDefault();
+    const estudiantes = JSON.parse(localStorage.getItem('bd_estudiantes')) || [];
+    const posicionAlumno = document.getElementById('sel-estudiante').value;
+
+    if (posicionAlumno === "") {
+        alert("Primero debes seleccionar a un alumno de la lista desplegable.");
         return;
     }
 
-    if (confirm("¿Estás seguro de que deseas eliminar este registro?")) {
-        datos.splice(index, 1);
-        dibujarTabla();
-    }
-}
+    estudiantes[posicionAlumno].nota1 = parseFloat(document.getElementById('nota1-profe').value) || 0;
+    estudiantes[posicionAlumno].nota2 = parseFloat(document.getElementById('nota2-profe').value) || 0;
+    estudiantes[posicionAlumno].nota3 = parseFloat(document.getElementById('nota3-profe').value) || 0;
 
-function limpiarFormulario() {
-    document.getElementById("nombre").value = "";
-    document.getElementById("materia").value = "";
-    document.getElementById("horario").value = "";
-}
-
-function cargarDatos() {
-    datos = [
-        { nombre: "Diego Giraldo", materia: "FrontEnd", horario: "06:00 PM" }
-    ];
-    dibujarTabla();
+    localStorage.setItem('bd_estudiantes', JSON.stringify(estudiantes));
+    
+    alert("Las calificaciones han sido almacenadas con éxito.");
+    document.getElementById('form-notas').reset();
+    
+    mostrarEstudiantesParaProfesor();
 }

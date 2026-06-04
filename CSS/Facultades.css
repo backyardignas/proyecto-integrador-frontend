@@ -13,144 +13,124 @@
 
 /* --- 1. HEADER Y NAVEGACIÓN (COMPATIBLE CON BOOTSTRAP TOGGLER) --- */
 .header-principal {
-    background-color: rgba(0, 70, 148, 0.9) !important; 
-    backdrop-filter: blur(14px); 
-    -webkit-backdrop-filter: blur(14px);
-    border-bottom: 2px solid rgba(0, 214, 255, 0.25); 
-    box-shadow: 0 8px 32px rgba(0, 26, 53, 0.3);
+    background-color: var(--azul-primario);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.navegador-custom .navbar-collapse {
+.navegador-custom {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navegador-custom .navbar-nav {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    padding-left: 0;
-    list-style: none !important;
+    padding: 0.7rem 8%;
 }
 
 .logo-nav {
-    width: 52px;
-    height: 52px;
+    width: 55px;
+    height: 55px;
     background-color: var(--blanco-puro);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid var(--celeste-acento);
-    box-shadow: 0 0 15px rgba(0, 214, 255, 0.4); 
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    transition: transform 0.3s ease;
     overflow: hidden;
 }
 
 .logo-nav img {
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 75%;
+    max-height: 75%;
     object-fit: contain;
 }
 
 .logo-nav:hover {
-    transform: scale(1.08) rotate(5deg);
-    box-shadow: 0 0 25px var(--celeste-acento);
+    transform: scale(1.1) rotate(5deg);
 }
 
-.navegador-custom .nav-link {
+.nav-link {
     color: rgba(255, 255, 255, 0.9) !important;
     font-weight: 400;
-    font-size: 0.95rem;
-    padding: 8px 16px !important;
-    border-radius: 8px;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--celeste-acento) !important;
+}
+
+        .navegador-custom .dropdown-menu {
+            background-color: var(--azul-oscuro) !important;
+            border: 1px solid rgba(0, 214, 255, 0.3) !important;
+            border-radius: 12px !important;
+            padding: 8px 0 !important;
+            margin-top: 10px !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .navegador-custom .dropdown-menu .dropdown-item {
+            color: var(--blanco-puro) !important;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 10px 20px !important;
+            transition: all 0.25s ease;
+        }
+
+        .navegador-custom .dropdown-item:hover {
+            background-color: rgba(0, 214, 255, 0.2) !important;
+            color: var(--celeste-acento) !important;
+        }
+
+        .navegador-custom .dropdown-divider {
+            border-top: 1px solid rgba(0, 214, 255, 0.15) !important;
+            margin: 6px 0 !important;
+        }
+
+.buscador-custom {
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--blanco-puro);
+    outline: none;
     transition: all 0.3s ease;
 }
 
-.navegador-custom .nav-link:hover, 
-.navegador-custom .nav-link:focus,
-.navegador-custom .nav-link.active {
-    color: var(--blanco-puro) !important;
-    background-color: rgba(0, 214, 255, 0.15) !important;
-    text-shadow: 0 0 8px rgba(0, 214, 255, 0.6);
-}
-
-/* Submenú Desplegable (Dropdown) */
-.navegador-custom .dropdown-menu {
-    background-color: var(--azul-oscuro) !important;
-    border: 1px solid rgba(0, 214, 255, 0.3) !important;
-    border-radius: 12px !important;
-    padding: 8px 0 !important;
-    margin-top: 10px !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* CORRECCIÓN EXCLUSIVA DE COLOR PARA LA LETRA DEL SUBMENÚ */
-.navegador-custom .dropdown-menu .dropdown-item {
-    color: var(--blanco-puro) !important; /* Fuerza el color blanco de la tipografía */
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding: 10px 20px !important;
-    transition: all 0.25s ease;
-}
-
-.navegador-custom .dropdown-item:hover {
-    background-color: rgba(0, 214, 255, 0.2) !important;
-    color: var(--celeste-acento) !important; /* Resalta el texto en celeste al pasar el cursor */
-}
-
-.navegador-custom .dropdown-divider {
-    border-top: 1px solid rgba(0, 214, 255, 0.15) !important;
-    margin: 6px 0 !important;
-}
-
-/* Buscador */
-.buscador-custom {
-    border-radius: 25px !important;
-    border: 1px solid rgba(0, 214, 255, 0.3) !important;
-    padding: 9px 20px !important;
-    font-size: 0.85rem !important;
-    background-color: rgba(0, 26, 53, 0.4) !important;
-    color: var(--blanco-puro) !important;
-    outline: none !important;
-    width: 200px !important;
-    transition: all 0.4s ease !important;
-}
-
 .buscador-custom::placeholder {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .buscador-custom:focus {
-    width: 260px !important;
-    background-color: var(--blanco-puro) !important;
-    color: var(--texto-oscuro) !important;
-    border-color: var(--celeste-acento) !important;
-    box-shadow: 0 0 15px rgba(0, 214, 255, 0.3) !important;
+    background-color: var(--blanco-puro);
+    color: var(--texto-oscuro);
+    border-color: var(--celeste-acento);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
 .btn-buscar {
-    border-radius: 25px !important;
-    padding: 9px 24px !important;
-    background: linear-gradient(135deg, var(--celeste-acento), #00bcd4) !important;
-    border: none !important;
-    color: var(--azul-oscuro) !important;
-    font-weight: 600 !important;
+    border-radius: 25px;
+    padding: 8px 25px;
+    background-color: var(--celeste-acento);
+    border: none;
+    color: var(--azul-primario);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
     text-transform: uppercase;
-    font-size: 0.75rem !important;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 15px rgba(0, 214, 255, 0.2);
+    font-size: 0.8rem;
 }
 
 .btn-buscar:hover {
-    background: var(--blanco-puro) !important;
-    color: var(--azul-primario) !important;
+    background-color: var(--blanco-puro);
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* --- 2. HERO BANNER PRINCIPAL --- */

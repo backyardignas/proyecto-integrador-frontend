@@ -1,50 +1,43 @@
-function login() {
-    let usuarioInput = document.getElementById("usuario").value;
-    let contraseñaInput = document.getElementById("contraseña").value;
+async function login() {
+    const usuarioEstudiante = document.getElementById('usuario').value.trim();
+    const contraseniaEstudiante = document.getElementById('contraseña').value;
 
-    const usuariosPermitidos = {
-        "Juliana": "123456",
-        "Monroy": "123456",
-        "Santiago": "123456",
-        "Jose": "123456"
-    };
-
-    if (!usuarioInput || !contraseñaInput) {
-        alert("Por favor, completa todos los campos.");
+    if (usuarioEstudiante === "" || contraseniaEstudiante === "") {
+        alert("Por favor, completa ambos campos para ingresar.");
         return;
     }
 
-    const ahora = Date.now();
-    const tiempoBloqueo = localStorage.getItem(`bloqueo_${usuarioInput}`);
-
-    if (tiempoBloqueo && ahora < tiempoBloqueo) {
-        const segundosRestantes = Math.ceil((tiempoBloqueo - ahora) / 1000);
-        alert(`Usuario bloqueado. Intenta en ${segundosRestantes} segundos.`);
-        return;
-    }
-
-    if (usuariosPermitidos[usuarioInput] && usuariosPermitidos[usuarioInput] === contraseñaInput) {
-        localStorage.removeItem(`intentos_${usuarioInput}`);
-        localStorage.removeItem(`bloqueo_${usuarioInput}`);
+    try {
+    
+        const respuesta = await fetch('estudiantes.json');
         
-        // Guardamos el nombre para que aparezca en la subpágina
-        localStorage.setItem("usuarioLogueado", usuarioInput);
-        
-        // REDIRECCIÓN A ESTUDIANTES
-        window.location.href = "estudiantes.html";
-    } else {
-        let intentos = parseInt(localStorage.getItem(`intentos_${usuarioInput}`)) || 0;
-        intentos++;
-        localStorage.setItem(`intentos_${usuarioInput}`, intentos);
-
-        if (intentos >= 3) {
-            const bloqueoTiempo = ahora + (2 * 60 * 1000);
-            localStorage.setItem(`bloqueo_${usuarioInput}`, bloqueoTiempo);
-            localStorage.setItem(`intentos_${usuarioInput}`, 0);
-            alert("Has fallado 3 veces. Usuario bloqueado por 2 minutos.");
-        } else {
-            alert(`Credenciales incorrectas. Intentos: ${intentos}/3`);
+        if (!respuesta.ok) {
+            throw new Error(`No se encontró estudiantes.json. Estado: ${respuesta.status}`);
         }
+
+        const datosEstudiantes = await respuesta.json();
+
+        
+        localStorage.setItem('bd_estudiantes', JSON.stringify(datosEstudiantes));
+
+        
+        const estudianteEncontrado = datosEstudiantes.find(
+            est => est.nombre.toLowerCase() === usuarioEstudiante.toLowerCase()
+        );
+
+        
+        if (estudianteEncontrado && estudianteEncontrado.clave === contraseniaEstudiante) {
+            localStorage.setItem('sesion_activa', JSON.stringify({ 
+                nombre: estudianteEncontrado.nombre, 
+                rol: 'estudiante' 
+            }));
+            window.location.href = 'estudiantes.html';
+        } else {
+            alert("Usuario no encontrado o contraseña incorrecta.");
+        }
+
+    } catch (error) {
+        console.error("Error en login.js:", error);
+        alert("Error de conexión con la base de datos de estudiantes.");
     }
 }
-/*hola*/

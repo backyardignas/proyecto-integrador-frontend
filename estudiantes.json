@@ -1,0 +1,35 @@
+
+ [
+  {
+    "nombre": "Juliana Marulanda",
+    "carrera": "Ingeniería de Sistemas",
+    "nota1": 4.8,
+    "nota2": 4.5,
+    "nota3": 5.0,
+    "clave": "Estudiante2026"
+  },
+  {
+    "nombre": "Santiago Arango",
+    "carrera": "Ingeniería de Sistemas",
+    "nota1": 3.5,
+    "nota2": 4.0,
+    "nota3": 3.8,
+    "clave": "Estudiante2026"
+  },
+  {
+    "nombre": "Alex Monroy",
+    "carrera": "Gestión Empresarial",
+    "nota1": 4.2,
+    "nota2": 3.8,
+    "nota3": 4.5,
+    "clave": "Estudiante2026"
+  },
+  {
+    "nombre": "Jose Manuel",
+    "carrera": "Gestión Empresarial",
+    "nota1": 4.2,
+    "nota2": 3.8,
+    "nota3": 4.5,
+    "clave": "Estudiante2026"
+  }
+]
