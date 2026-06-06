@@ -385,3 +385,15 @@ select:disabled {
         font-size: 1.15rem;
     }
 }
+
+/* --- VISTA INDIVIDUAL DE NOTAS (estudiante) --- */
+.container.solo-notas {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+}
+
+.grid-estudiantes.centrado {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+}

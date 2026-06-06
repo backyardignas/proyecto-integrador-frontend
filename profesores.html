@@ -18,42 +18,15 @@
         </div>
         <div class="user-info">
             <span id="saludo-usuario">Cargando...</span>
+            <span id="materia-profe" style="font-size: 0.85rem; color: #95a5a6; margin-left: 8px;"></span>
             <a href="Main.html" class="btn-back">Cerrar Sesión</a>
         </div>
     </header>
 
     <main class="container">
 
-        <!-- Columna del Formulario -->
         <section class="form-section">
-            <h2 id="form-titulo">Registrar Profesor</h2>
-            <form id="professor-form">
-                <input type="hidden" id="indice-edicion">
-
-                <div class="input-group">
-                    <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" placeholder="Ej: Diego Giraldo" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="materia">Materia / Asignatura</label>
-                    <input type="text" id="materia" placeholder="Ej: FrontEnd" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="horario">Horario</label>
-                    <input type="text" id="horario" placeholder="Ej: 06:00 PM" required>
-                </div>
-
-                <button type="submit" id="btn-guardar">Guardar Datos</button>
-            </form>
-
-            <!-- Separador para la sección de notas de estudiantes -->
-            <div class="separador-seccion">
-                <span>Gestión de Notas</span>
-            </div>
-
-            <h2>Asignar Nota a Estudiante</h2>
+            <h2>Asignar Notas a Estudiante</h2>
             <form id="form-notas">
                 <div class="input-group">
                     <label for="sel-estudiante">Seleccionar Estudiante</label>
@@ -81,29 +54,9 @@
             </form>
         </section>
 
-        <!-- Columna de la Tabla de Profesores y Estudiantes -->
         <section class="list-section">
-            <h2>Profesores Registrados</h2>
-            <div class="tabla-responsive">
-                <table class="tabla-profesores">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Materia</th>
-                            <th>Horario</th>
-                            <th class="col-acciones">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="lista-profesores">
-                        <!-- Filas renderizadas dinámicamente -->
-                    </tbody>
-                </table>
-            </div>
-
-            <h2 style="margin-top: 35px;">Estudiantes y sus Notas</h2>
-            <div id="lista-estudiantes-profe" class="grid-estudiantes">
-                <!-- Tarjetas de estudiantes con notas editables por el profesor -->
-            </div>
+            <h2>Estudiantes y sus Notas</h2>
+            <div id="lista-estudiantes-profe" class="grid-estudiantes"></div>
         </section>
 
     </main>

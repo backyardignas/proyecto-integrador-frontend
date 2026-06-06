@@ -1,22 +1,22 @@
-// Procesa el envío del formulario de correspondencia
 function procesarEnvio(event) {
-    event.preventDefault(); // Impedimos la recarga innecesaria de la pantalla
-    
-    const nombre = document.getElementById('c-nombre').value;
-    const modal = document.getElementById('modalExito');
-    
-    // Inyectamos dinámicamente un mensaje personalizado con el nombre del usuario
-    document.getElementById('modalMensaje').textContent = `¡Muchas gracias ${nombre}! Tu mensaje ha sido recibido con éxito por nuestro equipo de soporte de la UDEO. Nos comunicaremos contigo muy pronto.`;
-    
-    // Activamos la visibilidad del modal flotante estético
-    modal.style.display = 'flex';
-}
+    event.preventDefault();
 
-// Cierra la ventana modal flotante de confirmación
-function cerrarModalExito() {
-    const modal = document.getElementById('modalExito');
-    modal.style.display = 'none';
-    
-    // Reseteamos por completo los campos de texto del formulario
-    document.getElementById('formularioContacto').reset();
+    const nombre = document.getElementById('c-nombre').value;
+    const email = document.getElementById('c-email').value;
+    const asunto = document.getElementById('c-asunto').value;
+    const mensaje = document.getElementById('c-mensaje').value;
+
+    const destinatario = "soporte@udeo.edu.co";
+
+    const cuerpo = `
+Nombre: ${nombre}
+Correo: ${email}
+Asunto: ${asunto}
+
+Mensaje:
+${mensaje}
+`;
+
+    window.location.href =
+        `mailto:${destinatario}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
 }
