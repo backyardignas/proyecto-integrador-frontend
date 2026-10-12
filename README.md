@@ -1,6 +1,6 @@
 # 🎓 Sistema de Gestión Académica - UniOriente
 
-¡Bienvenido profe Diego! Este es el proyecto integrador de desarrollo web diseñado para la administración y control de estudiantes y profesores de **UniOriente**. La aplicación cuenta con una interfaz moderna y estilizada en tonos lilas que facilita el registro de usuarios, el control de materias y el seguimiento del rendimiento académico.
+Proyecto integrador de desarrollo web realizado en equipo en **CESDE**, diseñado para la administración y control de estudiantes y profesores de **UniOriente**. La aplicación cuenta con una interfaz moderna y estilizada en tonos lilas que facilita el registro de usuarios, el control de materias y el seguimiento del rendimiento académico.
 
 ## 🚀 Características Principales
 
@@ -63,8 +63,8 @@ Esta es la sección más avanzada del sistema. No solo almacena alumnos, sino qu
 ## 👥 Equipo de Trabajo
 
 * **Juliana Marulanda:** Programó la lógica de JavaScript, el sistema de notas (30%, 30%, 40%) con sus alertas de color (Aprobado/Reprobado) y el guardado de datos en `localStorage`.
-* **Alex Monroy:** Diseñó las tarjetas dinámicas de los estudiantes y ayudó con la maquetación responsiva usando Bootstrap 5.
-* **Santiago Arango:** Creó el módulo de profesores, estructurando sus formularios, tablas de horarios y apoyando la conexión de los archivos.
+* **Alex Monroy** ([GitHub](https://github.com/AlexMonroy69)): Diseñó las tarjetas dinámicas de los estudiantes y ayudó con la maquetación responsiva usando Bootstrap 5.
+* **Santiago Arango** ([GitHub](https://github.com/backyardignas) · [Portafolio](https://backyardignas.github.io)): Creó el módulo de profesores, estructurando sus formularios, tablas de horarios y apoyando la conexión de los archivos.
 * **Jose Vásquez:** Diseñó el mockup (boceto) inicial del proyecto, configuró la barra de navegación, las vistas principales y apoyó con Git.
 
 ---
